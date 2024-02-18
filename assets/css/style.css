@@ -1,16 +1,16 @@
-/* Google fonts import */ 
+/* Google fonts import */
 /* Google fonts import */
 @import url('https://fonts.googleapis.com/css2?family=Lato:wght@300&family=Oswald:wght@200;300;400;500;600;700&display=swap');
 
 /* Overide default settings */
-*{
+* {
     padding: 0;
     margin: 0;
     box-sizing: border-box;
 }
 
-/* General styles */ 
-body{
+/* General styles */
+body {
     min-height: 100vh;
     display: flex;
     flex-direction: column;
@@ -19,8 +19,15 @@ body{
     font-family: 'lato', sans-serif;
 }
 
+h1, h2, h3 {
+    font-family: 'Oswald', sans-serif;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    color: #252525;
+}
+
 /* Header */
-header{
+header {
     background-color: #ffffff;
     padding: 0 1rem;
     position: fixed;
@@ -32,32 +39,28 @@ header{
     align-items: baseline;
 }
 
-header a{
+header a {
     text-decoration: none;
     color: inherit;
 }
 
-h1{
-    font-family: 'Oswald', sans-serif;
-    text-transform: uppercase;
-    letter-spacing: 2px;
-    color: #252525;
-}
-#menu{
+
+#menu {
     font-size: 110%;
     letter-spacing: 4px;
     list-style: none;
 }
 
-#menu > li {
+#menu>li {
     margin-bottom: 1em;
 }
 
-.active{
+.active {
     border-bottom: 1px solid #3a3a3a;
 }
+
 /* Navbar styles with dropdown toggle */
-nav{
+nav {
     position: absolute;
     left: 0;
     background-color: #ffffff;
@@ -68,20 +71,24 @@ nav{
     top: 100%;
 
 }
+
 /* Nav toggle */
 #nav-toggle:checked~nav {
     display: block;
 }
+
 #nav-toggle {
     display: none;
 }
-.nav-toggle-label{
+
+.nav-toggle-label {
     font-size: 2rem;
 }
+
 /* main */
-main{
+main {
     /* Make main element take up any surplus space to push footer down */
-    flex: 1 0 auto; 
+    flex: 1 0 auto;
     margin-top: 47px;
 }
 
@@ -90,6 +97,23 @@ main{
     height: 600px;
     width: 100%;
     background: url(../images/hero-image.webp) no-repeat center center/cover;
+    position: relative;
+}
+
+#cover-text {
+    /* Final rgba value sets the opacity so it is semi-transparant */
+    background-color: rgba(241, 109, 107, .7);
+    font-size: 130%;
+    position: absolute;
+    bottom: 30px;
+    width: 80%;
+    min-height: 200px;
+    padding-top: 40px;
+    padding-left: 10px;
+}
+
+#cover-text > h2, #cover-text > h3 {
+    color: #ffffff
 }
 
 /* footer */
@@ -109,42 +133,50 @@ main{
 
 /* Media query: tablets and larger (768px and up) */
 @media screen and (min-width: 768px) {
-    /* Header */ 
+
+    /* Header */
     nav {
         display: block;
         position: relative;
         box-shadow: none;
         width: fit-content;
-        padding-right: 1rem ;
+        padding-right: 1rem;
     }
-    
+
     #menu {
         display: flex;
     }
-    
-    #menu > li {
+
+    #menu>li {
         padding-left: 1rem;
     }
+
     .nav-toggle-label {
         display: none;
     }
+
     #logo {
         font-size: 280%;
         line-height: 75px;
         margin: 0 0.5rem;
     }
 
-    /* Main Content */ 
+    /* Main Content */
     main {
-        /* Push main content down to accomodate header */ 
+        /* Push main content down to accomodate header */
         margin-top: 79px;
+    }
+
+    /* Hero */
+    #cover-text {
+        width: 300px;
+        right: 50px;
     }
 }
 
 /* Media query: laptops and larger(992px and up) */
 @media screen and (min-width: 992px) {
-    #menu  a:hover {
+    #menu a:hover {
         border-bottom: 1px solid #3a3a3a;
     }
 }
-    
